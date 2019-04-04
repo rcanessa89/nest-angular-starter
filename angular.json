@@ -5,7 +5,7 @@
   "projects": {
     "nest-angular-starter": {
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "client",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
@@ -17,18 +17,24 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/nest-angular-starter",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "dist/client-browser",
+            "index": "client/index.html",
+            "main": "client/main.ts",
+            "polyfills": "client/polyfills.ts",
+            "tsConfig": "client/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "client/favicon.ico",
+              "client/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "client/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                 "./client",
+                 "./client/scss"
+              ]
+            },
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -36,8 +42,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "client/environments/environment.ts",
+                  "with": "client/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -79,17 +85,23 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "client/test.ts",
+            "polyfills": "client/polyfills.ts",
+            "tsConfig": "client/tsconfig.spec.json",
+            "karmaConfig": "client/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "client/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./client",
+                "./client/scss"
+              ]
+            },
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "client/favicon.ico",
+              "client/assets"
             ]
           }
         },
@@ -97,8 +109,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "client/tsconfig.app.json",
+              "client/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -108,16 +120,22 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/nest-angular-starter-server",
-            "main": "src/main.server.ts",
-            "tsConfig": "src/tsconfig.server.json"
+            "outputPath": "dist/client-server",
+            "main": "client/main.server.ts",
+            "tsConfig": "client/tsconfig.server.json",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                 "./client",
+                 "./client/scss"
+              ]
+            }
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "client/environments/environment.ts",
+                  "with": "client/environments/environment.prod.ts"
                 }
               ],
               "sourceMap": false,
@@ -131,14 +149,14 @@
       }
     },
     "nest-angular-starter-e2e": {
-      "root": "e2e/",
+      "root": "client-e2e/",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
+            "protractorConfig": "client-e2e/protractor.conf.js",
             "devServerTarget": "nest-angular-starter:serve"
           },
           "configurations": {
@@ -150,7 +168,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
+            "tsConfig": "client-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]

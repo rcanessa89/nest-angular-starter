@@ -1,0 +1,11 @@
+@mixin flex($justify: null, $align: null) {
+	@if $justify != null {
+		justify-content: $justify;
+	}
+
+	@if $align != null {
+		align-items: $align;
+	}
+
+	display: flex;
+}

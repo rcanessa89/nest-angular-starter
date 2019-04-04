@@ -1,0 +1,52 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "outDir": "../dist/server",
+    "baseUrl": "./",
+    "paths": {
+      "@constants": [
+        "app.constants"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@enums/*": [
+        "enums/*"
+      ],
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@base/*": [
+        "modules/base/*"
+      ],
+      "@services/*": [
+        "services/*"
+      ],
+      "@entities/*": [
+        "database/entities/*"
+      ]
+    }
+  },
+  "exclude": [
+    "../node_modules",
+    "../server-test",
+    "../**/*spec.ts",
+    "../e2e",
+    "node_modules",
+    "server-test",
+    "**/*spec.ts",
+    "e2e"
+  ]
+}

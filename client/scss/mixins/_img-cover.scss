@@ -1,0 +1,9 @@
+@mixin img-cover($img: null) {
+	@if $img != null {
+		background-image: url('#{$img}');
+	}
+
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

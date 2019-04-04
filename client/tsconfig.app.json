@@ -1,0 +1,36 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "@environment": [
+        "client/environments/environment"
+      ],
+      "@services/*": [
+        "client/app/services/*"
+      ],
+      "@models/*": [
+        "client/app/models/*"
+      ],
+      "@interfaces/*": [
+        "client/app/interfaces/*"
+      ],
+      "@constants": [
+        "client/constants"
+      ],
+      "@routing/*": [
+        "client/app/routing/*"
+      ],
+      "@util/*": [
+        "client/app/util/*"
+      ]
+    }
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}

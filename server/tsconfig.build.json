@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": false,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "../node_modules",
+    "../server-test",
+    "../**/*spec.ts",
+    "../e2e"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "watch": ["server"],
+  "ext": "ts",
+  "ignore": ["server/**/*.spec.ts"],
+  "exec": "tsc -p ./server/tsconfig.json && node --inspect=0.0.0.0 -r ./tsconfig-paths-bootstrap.js dist/server/main.js"
+}

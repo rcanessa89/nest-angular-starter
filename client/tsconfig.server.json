@@ -1,0 +1,32 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app-server",
+    "paths": {
+      "@environment": [
+        "client/environments/environment"
+      ],
+      "@services/*": [
+        "client/app/services/*"
+      ],
+      "@models/*": [
+        "client/app/models/*"
+      ],
+      "@interfaces/*": [
+        "client/app/interfaces/*"
+      ],
+      "@constants": [
+        "client/constants"
+      ],
+      "@routing/*": [
+        "client/app/routing/*"
+      ],
+      "@util/*": [
+        "client/app/util/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "entryModule": "app/app.server.module#AppServerModule"
+  }
+}

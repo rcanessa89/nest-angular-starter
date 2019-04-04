@@ -1,0 +1,24 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@constants": "<rootDir>/../server/app.constants",
+    "@utils/(.*)": "<rootDir>/../server/utils/$1",
+    "@enums/(.*)": "<rootDir>/../server/enums/$1",
+    "@modules/(.*)": "<rootDir>/../server/modules/$1",
+    "@models/(.*)": "<rootDir>/../server/models/$1",
+    "@base/(.*)": "<rootDir>/../server/modules/base/$1",
+    "@services/(.*)": "<rootDir>/../server/services/$1",
+    "@entities/(.*)": "<rootDir>/../server/database/entities/$1"
+  },
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "<rootDir>/../server/tsconfig.test.json"
+    }
+  }
+}
